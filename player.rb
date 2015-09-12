@@ -8,7 +8,7 @@ class Player
   end
 
   def self.randomly_generated_player
-    salary = rand(8000..20000).to_i
+    salary = rand(9000..20000).to_i
     rating = rand(35..95).to_i
     name = "Random Player - #{salary}"
     opts = { name: name, salary: salary, value: rating }

@@ -19,9 +19,4 @@ class Roster
     num.times { roster.add_player(random_player.call) }
     roster
   end
-
-  def min_salary_required(num)
-    players = PlayerSelector.new(roster: self).players_by_salary.last(num)
-    players.map(&:salary).inject(&:+)
-  end
 end

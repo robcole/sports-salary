@@ -38,15 +38,7 @@ class PlayerSelector
     @players.sort_by(&:salary).reverse
   end
 
-  def best
-    if team.remaining_players > 1
-      @players.select do |player|
-        team_cap_after = team.cap_space - player.salary
-        remaining_players = team.remaining_players - 1
-        player.salary <= roster.min_salary_required(remaining_players)
-      end.first
-    else
-      @players.first
-    end
+  def best_player
+    @players.first
   end
 end
