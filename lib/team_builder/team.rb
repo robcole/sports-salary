@@ -1,7 +1,3 @@
-require_relative 'player'
-require_relative 'roster'
-require_relative 'player_selector'
-
 class Team
   attr_accessor :roster, :salary_cap, :max_players
 

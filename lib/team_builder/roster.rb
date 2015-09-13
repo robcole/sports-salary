@@ -2,7 +2,7 @@ class Roster
   attr_accessor :players
 
   def initialize(**opts)
-    @players = []
+    @players = opts.fetch(:players, [])
   end
 
   def players

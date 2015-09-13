@@ -14,4 +14,14 @@ class Player
     opts = { name: name, salary: salary, value: rating }
     new(opts)
   end
+
+  def self.create_players(arr)
+    arr.map do |player|
+      name = opts.fetch(:name, nil)
+      value = opts.fetch(:value, nil)
+      salary = opts.fetch(:salary, nil)
+      skip if [name, value, salary].map(&:nil?).includes?(true)
+      new(name: name, value: value, salary: salary)
+    end
+  end
 end
