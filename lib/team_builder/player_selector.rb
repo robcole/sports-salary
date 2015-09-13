@@ -1,5 +1,6 @@
 class PlayerSelector
   attr_accessor :roster, :players, :team
+  alias_method :id, :object_id
 
   def initialize(**opts)
     @roster = opts.fetch(:roster)

@@ -1,10 +1,18 @@
 class Player
+  @@id = 1
   attr_accessor :name, :value, :salary
 
   def initialize(opts)
     @name = opts.fetch(:name)
     @value = opts.fetch(:value)
     @salary = opts.fetch(:salary)
+    @@id += 1
+  end
+
+  # FactoryGirl requires an object ID, so we create and reference a
+  # non-persisted ID that increments each time we create a new class.
+  def id
+    @@id
   end
 
   def self.randomly_generated_player

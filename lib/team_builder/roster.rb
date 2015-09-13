@@ -1,4 +1,5 @@
 class Roster
+  alias_method :id, :object_id
   attr_accessor :players
 
   def initialize(**opts)

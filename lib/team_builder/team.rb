@@ -1,4 +1,5 @@
 class Team
+  @@id = 1
   attr_accessor :roster, :salary_cap, :max_players
 
   def initialize(**opts)
@@ -6,6 +7,11 @@ class Team
     @max_players = opts.fetch(:max_players)
     @roster = opts.fetch(:roster)
     @players = []
+    @@id += 1
+  end
+
+  def id
+    @@id
   end
 
   def self.optimal_team_for_roster(**opts)
